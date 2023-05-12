@@ -54,7 +54,7 @@ function checkPalindromeForAllDateFormats(date) {
   return flag;
 }
 
-function isLeapYear(date) {
+function isLeapYear(year) {
   if (year % 400) {
     return true;
   }
@@ -120,3 +120,28 @@ function getNextPalindromeDate(date) {
   }
   return [ctr, nextDate];
 }
+
+var birthdayInput = document.querySelector("#birthday-input");
+var checkPalindromeBtn = document.querySelector("#check-palindrome");
+
+var outputEl = document.querySelector("#display-message");
+
+function clickHandler(e) {
+  var bdayStr = birthdayInput.value;
+  if (bdayStr !== "") {
+    var listOfDate = bdayStr.split("-");
+    var date = {
+      day: listOfDate[2],
+      month: listOfDate[1],
+      year: listOfDate[0],
+    };
+    var isPalindrome = checkPalindromeForAllDateFormats(date);
+    if (isPalindrome) {
+      outputEl.innerText = "Yay your birthday is a palindrome";
+    } else {
+      var [ctr, nextDate] = getNextPalindromeDate(date);
+      outputEl.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year} in ${ctr} days`;
+    }
+  }
+}
+checkPalindromeBtn.addEventListener("click", clickHandler);
