@@ -105,3 +105,18 @@ function getNextDate(date) {
     year: year,
   };
 }
+
+function getNextPalindromeDate(date) {
+  var nextDate = getNextDate(date);
+  var ctr = 0;
+
+  while (1) {
+    ctr++;
+    var isPalindrome = checkPalindromeForAllDateFormats(nextDate);
+    if (isPalindrome) {
+      break;
+    }
+    nextDate = getNextDate(nextDate);
+  }
+  return [ctr, nextDate];
+}
