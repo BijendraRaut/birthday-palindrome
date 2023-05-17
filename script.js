@@ -202,12 +202,12 @@ function clickHandler(e) {
       const [ctr2, prevDate] = getPreviousPalindromeDate(date);
 
       if (ctr1 > ctr2) {
-        outputEl.innerText = `The nearest palindrome date is ${prevDate.day}-${prevDate.month}-${prevDate.year}, you missed by ${ctr2} days.`;
+        outputEl.innerText = `The nearest palindrome date is ${prevDate.day}-${prevDate.month}-${prevDate.year}, you missed by ${ctr2} days.😢`;
       } else {
-        outputEl.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr1} days.`;
+        outputEl.innerText = `The nearest palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed by ${ctr1} days.😭`;
       }
     } else {
-      outputEl.innerText = "Yay! Your birthday is palindrome!";
+      outputEl.innerText = "Yay! Your birthday is palindrome! 🥳";
     }
   }
 }

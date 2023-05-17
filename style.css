@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(29, 35, 51);
+    height: 100vh;
+    color: white;
+}
+
+main {
+    text-align: center;
+    height: 100%;
+    border: 1px solid;
+    color: white;
+}
+
+p {
+    font-size: large;
+    padding: 2rem;
+}
